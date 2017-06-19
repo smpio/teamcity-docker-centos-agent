@@ -20,5 +20,12 @@ RUN curl -sSL https://github.com/JetBrains/teamcity-docker-minimal-agent/raw/mas
     chmod +x /run-agent.sh && \
     mkdir -p /data/teamcity_agent/conf
 
-CMD ["/run-agent.sh"]
 EXPOSE 9090
+
+ENV DOCKER_VERSION 17.03.1.ce-1.el7.centos
+RUN yum install -y yum-utils && \
+    yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && \
+    yum install -y docker-ce-$DOCKER_VERSION
+
+COPY run.sh /
+CMD ["/run.sh"]
