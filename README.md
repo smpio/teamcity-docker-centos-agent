@@ -1,2 +1,3 @@
-# teamcity-docker-centos-agent
-TeamCity agent Dockerfile based on CentOS image
+# teamcity-agent-centos
+
+TeamCity agent image based on CentOS
