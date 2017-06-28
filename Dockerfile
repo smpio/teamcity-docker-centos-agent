@@ -27,5 +27,9 @@ RUN yum install -y yum-utils && \
     yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && \
     yum install -y docker-ce-$DOCKER_VERSION
 
+RUN yum install -y git
+
+RUN yum clean all
+
 COPY run.sh /
 CMD ["/run.sh"]
