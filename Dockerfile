@@ -27,8 +27,7 @@ RUN yum install -y yum-utils && \
     yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && \
     yum install -y docker-ce-$DOCKER_VERSION
 
-# TODO: remove python-virtualenv
-RUN yum install -y git python-virtualenv
+RUN yum install -y git
 
 RUN yum clean all
 
